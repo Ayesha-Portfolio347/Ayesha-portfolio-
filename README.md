@@ -1,2 +1,2 @@
-# Ayesha-portfolio-
-My portfolio website showcasing projects and skills.”
+Hi, I’m Ayesha from Lahore, Pakistan. I enjoy calligraphy, sketching, painting, and Canva design, combining creativity with digital tools. Currently, I am studying Arabic Literature and exploring AI to connect language, art, and technology. My goal is to build projects that reflect both creativity and innovation. I love learning new skills, organizing information, and sharing knowledge with others. Through this portfolio, I aim to showcase my journey as a student, creator, and future AI explorer.
+
