@@ -9,14 +9,19 @@ body {
 .container {
   width: 80%;
   margin: 40px auto;
-  border-left: 5px solid #5a2a83; /* purple side line */
+  border-left: 5px solid #5a2a83;
   padding: 20px;
   box-shadow: 0 0 10px rgba(90, 42, 131, 0.2);
 }
 
-h1, h2, h3 {
-  color: #5a2a83; /* dark purple headings */
+h1 {
+  color: #5a2a83;
   text-align: center;
+  font-size: 2em;
+}
+
+h2 {
+  color: #5a2a83;
 }
 
 .section-box {
@@ -24,15 +29,21 @@ h1, h2, h3 {
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 20px;
-  background-color: #f9f9ff; /* light purple tint */
+  background-color: #f9f9ff;
 }
 
-a {
-  color: #5a2a83;
+.button {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  background-color: #5a2a83;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+.button:hover {
+  background-color: #7a3db0;
 }
 
