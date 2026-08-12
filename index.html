@@ -1,52 +1,957 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ayesha Kamal Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ayesha Kamal | AI Leadership Portfolio</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #faf8ff;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* NAVIGATION */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #542477;
+    padding: 15px 20px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ead8ff;
+    transform: translateY(-2px);
+}
+
+/* GENERAL */
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+section {
+    padding: 75px 0;
+}
+
+.section-title {
+    text-align: center;
+    color: #542477;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px;
+    color: #666;
+}
+
+/* HERO */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff, #f2eaff);
+}
+
+.hero h1 {
+    font-size: 55px;
+    color: #542477;
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: 28px;
+    color: #75429b;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 720px;
+    margin: auto;
+    font-size: 18px;
+    color: #555;
+}
+
+.badge {
+    display: inline-block;
+    margin: 25px 0;
+    padding: 10px 22px;
+    border-radius: 30px;
+    background: #542477;
+    color: white;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 27px;
+    border-radius: 30px;
+    background: #542477;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #75429b;
+    transform: translateY(-3px);
+}
+
+/* CARDS */
+.card {
+    background: white;
+    border: 2px solid #75429b;
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 20px rgba(84,36,119,0.08);
+}
+
+.card h3 {
+    color: #542477;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.card h4 {
+    color: #75429b;
+    margin-bottom: 10px;
+}
+
+.card ul {
+    padding-left: 25px;
+}
+
+.highlight {
+    color: #542477;
+    font-weight: bold;
+}
+
+/* ABOUT */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.skill {
+    background: #eee4fa;
+    color: #542477;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* TOOLKIT */
+.toolkit-intro {
+    background: #f0e7fa;
+    border-left: 6px solid #542477;
+}
+
+.challenge {
+    margin-bottom: 35px;
+}
+
+.challenge-number {
+    display: inline-block;
+    background: #542477;
+    color: white;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.evidence {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.evidence img {
+    width: 100%;
+    max-width: 700px;
+    max-height: 600px;
+    object-fit: contain;
+    border: 2px solid #cbb2df;
+    border-radius: 12px;
+    background: #fafafa;
+    padding: 8px;
+}
+
+.evidence-caption {
+    color: #75429b;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* JOURNEY */
+.timeline {
+    border-left: 4px solid #542477;
+    padding-left: 25px;
+}
+
+.week {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.week::before {
+    content: "";
+    position: absolute;
+    left: -37px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background: #542477;
+    border-radius: 50%;
+}
+
+.week h3 {
+    color: #542477;
+}
+
+/* ACHIEVEMENTS */
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.achievement {
+    background: white;
+    border: 2px solid #75429b;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.achievement h3 {
+    color: #542477;
+}
+
+/* REFLECTION */
+.reflection {
+    background: #542477;
+    color: white;
+    border-radius: 20px;
+    padding: 45px;
+}
+
+.reflection h3 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+/* GRADUATION */
+.graduation {
+    text-align: center;
+    background: linear-gradient(135deg, #f1e5fc, #ffffff);
+}
+
+.graduation-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.graduation h2 {
+    color: #542477;
+    font-size: 40px;
+}
+
+.thank-you {
+    margin-top: 35px;
+    font-size: 24px;
+    color: #542477;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background: #542477;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .about-grid,
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 55px 0;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    .reflection {
+        padding: 28px;
+    }
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Hello, I'm Ayesha!</h1>
-    <div class="section-box">
-      <h2>About Me</h2>
-      <p>I am Ayesha Kamal, a BS Arabic Literature student at Lahore College for Women University.</p>
-    </div>
 
-    <div class="section-box">
-      <h2>Skills</h2>
-      <ul>
-        <li>Arabic Language</li>
-        <li>Canva</li>
-        <li>MS Word</li>
-        <li>MS PowerPoint</li>
-        <li>MS Excel</li>
-        <li>GitHub</li>
-        <li>HTML Basics</li>
-        <li>Communication Skills</li>
-      </ul>
-    </div>
+<!-- NAVIGATION -->
+<nav>
+<div class="nav-container">
 
-    <div class="section-box">
-      <h2>Projects</h2>
-      <ul>
-        <li>Personal Portfolio Website</li>
-        <li>Arabic Vocabulary Book</li>
-        <li>AI Leadership Fellowship Projects</li>
-      </ul>
-    </div>
+<div class="logo">Ayesha Kamal</div>
 
-    <div class="section-box">
-      <h2>Contact</h2>
-      <p>Email: ayeshakamal310@gmail.com</p>
-      <p>Instagram: @kamal184539</p>
-    </div>
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#toolkit">AI Toolkit</a>
+<a href="#journey">Journey</a>
+<a href="#achievements">Achievements</a>
+<a href="#reflection">Reflection</a>
+<a href="#graduation">Graduation</a>
+</div>
 
-    <a href="https://github.com/Ayesha-Portfolio347" class="button">View GitHub Repo</a>
-  </div>
+</div>
+</nav>
+
+
+<!-- HOME -->
+<section id="home" class="hero">
+<div class="container">
+
+<h1>Welcome to My Website</h1>
+
+<h2>My AI Leadership Journey</h2>
+
+<div class="badge">
+Future Leaders Academy
+</div>
+
+<p>
+Welcome to my digital portfolio. This website presents my learning,
+projects, AI activities, challenges, skills, reflections, and achievements
+from my six-week AI Leadership Fellowship.
+</p>
+
+<p style="margin-top:15px;">
+I have documented my journey from the first class to the final graduation showcase.
+</p>
+
+<a href="#about" class="btn">Explore My Journey</a>
+
+</div>
+</section>
+
+
+<!-- ABOUT ME -->
+<section id="about">
+<div class="container">
+
+<h2 class="section-title">About Me</h2>
+
+<p class="section-subtitle">
+A short introduction to my academic background, interests, and skills.
+</p>
+
+<div class="about-grid">
+
+<div class="card">
+<h3>About Me</h3>
+
+<p>
+I am <span class="highlight">Ayesha Kamal</span>, a BS Arabic Literature
+student at Lahore College for Women University.
+</p>
+
+<p style="margin-top:15px;">
+I am interested in Arabic language, learning new digital skills,
+creative work, and using technology to improve my academic and
+professional abilities.
+</p>
+</div>
+
+<div class="card">
+<h3>My Goals</h3>
+
+<ul>
+<li>Improve my Arabic language skills.</li>
+<li>Develop strong digital and AI skills.</li>
+<li>Improve my communication and research abilities.</li>
+<li>Build a professional digital portfolio.</li>
+<li>Prepare myself for future academic and career opportunities.</li>
+</ul>
+</div>
+
+</div>
+
+<div class="card">
+<h3>My Skills</h3>
+
+<div class="skills">
+<span class="skill">Arabic Language</span>
+<span class="skill">Canva</span>
+<span class="skill">MS Word</span>
+<span class="skill">PowerPoint</span>
+<span class="skill">MS Excel</span>
+<span class="skill">GitHub</span>
+<span class="skill">HTML Basics</span>
+<span class="skill">Communication</span>
+<span class="skill">AI Tools</span>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- AI TOOLKIT -->
+<section id="toolkit">
+<div class="container">
+
+<h2 class="section-title">My AI Toolkit</h2>
+
+<p class="section-subtitle">
+My 10 AI Superpowers — practical activities and evidence completed
+during my AI Leadership Fellowship.
+</p>
+
+<div class="card toolkit-intro">
+
+<h3>My AI Learning</h3>
+
+<p>
+During this fellowship, I learned how AI can support students in
+writing, studying, learning, creativity, communication, problem-solving,
+career planning, and digital skills.
+</p>
+
+<p style="margin-top:15px;">
+I also learned that AI should support my own thinking rather than
+replace it. I should understand, review, and verify information
+before using it.
+</p>
+
+</div>
+
+
+<!-- CHALLENGE 1 -->
+<div class="card challenge">
+<span class="challenge-number">Challenge 1</span>
+<h3>Professional Writing</h3>
+
+<p>
+I used AI to create a short professional email and then reviewed
+and personalized it so that it sounded natural and appropriate for
+communication with a university professor.
+</p>
+
+<div class="evidence">
+<img src="evidence/challenge-01.png"
+alt="Challenge 1 Evidence">
+<div class="evidence-caption">Challenge 1 — Evidence</div>
+</div>
+</div>
+
+
+<!-- CHALLENGE 2 -->
+<div class="card challenge">
+<span class="challenge-number">Challenge 2</span>
+<h3>Study Smarter</h3>
+
+<p>
+I explored how AI can help a student understand difficult topics,
+organize revision, create questions, and prepare for an examination
+in a more structured way.
+</p>
+
+<div class="evidence">
+<img src="evidence/challenge-02.png"
+alt="Challenge 2 Evidence">
+<div class="evidence-caption">Challenge 2 — Evidence</div>
+</div>
+</div>
+
+
+<!-- CHALLENGE 3 -->
+<div class="card challenge">
+<span class="challenge-number">Challenge 3</span>
+<h3>Learn Something New</h3>
+
+<p>
+I selected a topic that I was genuinely interested in learning.
+I used AI to understand the topic step by step, asked questions,
+and checked the information instead of simply copying the answer.
+</p>
+
+<div class="evidence">
+<img src="evidence/challenge-03.png"
+alt="Challenge 3 Evidence">
+<div class="evidence-caption">Challenge 3 — Evidence</div>
+</div>
+</div>
+
+
+<!-- CHALLENGE 4 -->
+<div class="card challenge">
+<span class="challenge-number">Challenge 4</span>
+<h3>Problem Solving</h3>
+
+<p>
+I explored a real-life problem and considered how AI could help
+find practical solutions. This activity helped me think about
+technology as a problem-solving tool.
+</p>
+
+<div class="evidence">
+<img src="evidence/challenge-04.png"
+alt="Challenge 4 Evidence">
+<div class="evidence-caption">Challenge 4 — Evidence</div>
+</div>
+</div>
+
+
+<!-- CHALLENGE 5 -->
+<div class="card challenge">
+<span class="challenge-number">Challenge 5</span>
+<h3>Creative Thinking</h3>
+
+<p>
+I used AI as a creative assistant to generate ideas and improve
+my creative work while keeping my own ideas and decisions at the
+center of the process.
+</p>
+
+<div class="evidence">
+<img src="evidence/challenge-05.png"
+alt="Challenge 5 Evidence">
+<div class="evidence-caption">Challenge 5 — Evidence</div>
+</div>
+</div>
+
+
+<!-- CHALLENGE 6 -->
+<div class="card challenge">
+<span class="challenge-number">Challenge 6</span>
+<h3>Communication</h3>
+
+<p>
+I explored how AI can help improve communication by making messages
+clearer, more organized, professional, and suitable for different
+situations.
+</p>
+
+<div class="evidence">
+<img src="evidence/challenge-06.png"
+alt="Challenge 6 Evidence">
+<div class="evidence-caption">Challenge 6 — Evidence</div>
+</div>
+</div>
+
+
+<!-- CHALLENGE 7 -->
+<div class="card challenge">
+<span class="challenge-number">Challenge 7</span>
+<h3>Career Planning</h3>
+
+<p>
+I explored future career possibilities and the skills that can
+help me prepare for a changing workplace. This helped me connect
+my current studies with future opportunities.
+</p>
+
+<div class="evidence">
+<img src="evidence/challenge-07.png"
+alt="Challenge 7 Evidence">
+<div class="evidence-caption">Challenge 7 — Evidence</div>
+</div>
+</div>
+
+
+<!-- CHALLENGE 8 -->
+<div class="card challenge">
+<span class="challenge-number">Challenge 8</span>
+<h3>Digital Skills</h3>
+
+<p>
+I practiced using digital tools and learned how technology can
+help me organize information, present my work, and build a stronger
+online portfolio.
+</p>
+
+<div class="evidence">
+<img src="evidence/challenge-08.png"
+alt="Challenge 8 Evidence">
+<div class="evidence-caption">Challenge 8 — Evidence</div>
+</div>
+</div>
+
+
+<!-- CHALLENGE 9 -->
+<div class="card challenge">
+<span class="challenge-number">Challenge 9</span>
+<h3>Improve My Portfolio</h3>
+
+<p>
+I used AI to review my portfolio website and suggest a simple
+improvement. I then implemented a smooth hover effect on the
+navigation links to make the website more interactive and polished.
+</p>
+
+<div class="evidence">
+<img src="evidence/challenge-09.png"
+alt="Challenge 9 Evidence">
+<div class="evidence-caption">Challenge 9 — Website Improvement Evidence</div>
+</div>
+</div>
+
+
+<!-- CHALLENGE 10 -->
+<div class="card challenge">
+<span class="challenge-number">Challenge 10</span>
+<h3>Final AI Challenge</h3>
+
+<p>
+For my final challenge, I reflected on the AI skills I developed
+and how I can continue using them responsibly in my studies,
+creative work, communication, and future career.
+</p>
+
+<div class="evidence">
+<img src="evidence/challenge-10.png"
+alt="Challenge 10 Evidence">
+<div class="evidence-caption">Challenge 10 — Evidence</div>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- 6 WEEK JOURNEY -->
+<section id="journey">
+<div class="container">
+
+<h2 class="section-title">My 6-Week AI Leadership Journey</h2>
+
+<p class="section-subtitle">
+A summary of my learning and progress from the first class to the final week.
+</p>
+
+<div class="card">
+<div class="timeline">
+
+<div class="week">
+<h3>Week 1 — Discovering AI</h3>
+<p>
+I learned the basic concept of Artificial Intelligence and explored
+how AI can support students in everyday academic tasks.
+</p>
+</div>
+
+<div class="week">
+<h3>Week 2 — Meeting My AI Team</h3>
+<p>
+I explored AI tools and thought about how AI can help with studies,
+research, communication, and future careers.
+</p>
+</div>
+
+<div class="week">
+<h3>Week 3 — Building My Digital Portfolio</h3>
+<p>
+I started organizing my skills, projects, goals, and learning
+experiences into a professional digital portfolio.
+</p>
+</div>
+
+<div class="week">
+<h3>Week 4 — Solving Problems with AI</h3>
+<p>
+I identified real-life problems where AI could provide useful
+support and practiced thinking about practical solutions.
+</p>
+</div>
+
+<div class="week">
+<h3>Week 5 — AI Superpowers</h3>
+<p>
+I completed practical AI challenges covering writing, studying,
+creativity, communication, career planning, and digital skills.
+</p>
+</div>
+
+<div class="week">
+<h3>Week 6 — Reflection & Graduation</h3>
+<p>
+I reviewed my complete journey, reflected on what I learned,
+and prepared my final graduation showcase.
+</p>
+</div>
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+<div class="container">
+
+<h2 class="section-title">What I Achieved</h2>
+
+<p class="section-subtitle">
+The main skills and lessons I gained during my AI Leadership journey.
+</p>
+
+<div class="achievement-grid">
+
+<div class="achievement">
+<h3>🤖 AI Literacy</h3>
+<p>
+I developed a better understanding of AI and its practical uses
+in student life.
+</p>
+</div>
+
+<div class="achievement">
+<h3>✍️ Better Writing</h3>
+<p>
+I learned how AI can help organize and improve professional writing
+while keeping my own voice.
+</p>
+</div>
+
+<div class="achievement">
+<h3>📚 Smarter Learning</h3>
+<p>
+I learned ways to use AI for explanations, revision, questions,
+and structured learning.
+</p>
+</div>
+
+<div class="achievement">
+<h3>💡 Problem Solving</h3>
+<p>
+I practiced identifying problems and thinking about how technology
+could help solve them.
+</p>
+</div>
+
+<div class="achievement">
+<h3>🎨 Creativity</h3>
+<p>
+I learned to use AI as a creative support tool while keeping my
+own ideas and decisions important.
+</p>
+</div>
+
+<div class="achievement">
+<h3>💻 Digital Skills</h3>
+<p>
+I gained more confidence in digital tools, GitHub, websites,
+and online portfolio development.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- REFLECTION -->
+<section id="reflection">
+<div class="container">
+
+<h2 class="section-title">My Final Reflection</h2>
+
+<div class="reflection">
+
+<h3>What I Learned</h3>
+
+<p>
+This six-week AI Leadership Fellowship changed the way I think
+about Artificial Intelligence. At the beginning, I mainly saw AI
+as a tool for getting answers. During the fellowship, I learned
+that AI can also be used for learning, research, creativity,
+communication, problem-solving, and career planning.
+</p>
+
+<p style="margin-top:18px;">
+One of my biggest lessons was that using AI responsibly requires
+my own thinking. I should not blindly copy information. I should
+ask better questions, review the results, verify important
+information, and then make my own decisions.
+</p>
+
+<p style="margin-top:18px;">
+I also became more confident in using digital tools and presenting
+my work online. I want to continue developing these skills and
+use them in my academic journey and future career.
+</p>
+
+<p style="margin-top:18px;">
+This portfolio represents not only the tasks I completed, but also
+the progress I made throughout the fellowship.
+</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- GRADUATION -->
+<section id="graduation" class="graduation">
+<div class="container">
+
+<div class="graduation-icon">🎓</div>
+
+<h2>Graduation Showcase</h2>
+
+<p style="margin-top:20px; font-size:19px;">
+From my first AI activity to my final reflection, this portfolio
+captures my complete six-week learning journey.
+</p>
+
+<div class="card" style="margin-top:35px;">
+
+<h3>My AI Leadership Journey</h3>
+
+<p>
+I started this journey with curiosity and a willingness to learn.
+I completed practical challenges, explored AI tools, built digital
+skills, improved my portfolio, and reflected on responsible AI use.
+</p>
+
+<p style="margin-top:15px;">
+I am proud of the progress I made and excited to continue learning
+and developing my skills.
+</p>
+
+</div>
+
+<div class="thank-you">
+Thank You for Visiting My Portfolio! 🌟
+</div>
+
+<p style="margin-top:15px;">
+Thank you for taking the time to explore my learning journey.
+</p>
+
+<a href="#home" class="btn">Back to Top</a>
+
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<p><strong>Ayesha Kamal</strong></p>
+
+<p>BS Arabic Literature | AI Leadership Fellowship</p>
+
+<p>Future Leaders Academy</p>
+
+<p style="margin-top:12px;">
+© 2026 Ayesha Kamal — AI Leadership Portfolio
+</p>
+
+</footer>
+
 </body>
 </html>
-
 
 
